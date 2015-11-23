@@ -1,0 +1,18 @@
+[ 2015-11-23T19:04:50+08:00 ] 127.0.0.1 /knight/index.php/index.php/Home/Index/index
+ERR: 无法加载控制器:Index.php
+
+[ 2015-11-23T19:04:53+08:00 ] 127.0.0.1 /knight/index.php/index.php/Home/Index/index
+ERR: 无法加载控制器:Index.php
+
+[ 2015-11-23T19:04:59+08:00 ] 127.0.0.1 /knight/index.php/home/Index/login
+ERR: 非法操作:login
+
+[ 2015-11-23T19:05:21+08:00 ] 127.0.0.1 /knight/index.php/index.php/Home/Index/index
+ERR: 无法加载控制器:Index.php
+
+[ 2015-11-23T19:05:31+08:00 ] 127.0.0.1 /knight/index.php/home/Index/login
+ERR: 非法操作:login
+
+[ 2015-11-23T19:05:37+08:00 ] 127.0.0.1 /knight/index.php/home/Index/login
+ERR: 非法操作:login
+
