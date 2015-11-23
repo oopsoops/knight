@@ -16,3 +16,6 @@ ERR: 非法操作:login
 [ 2015-11-23T19:05:37+08:00 ] 127.0.0.1 /knight/index.php/home/Index/login
 ERR: 非法操作:login
 
+[ 2015-11-23T21:39:28+08:00 ] 127.0.0.1 /knight/index.php/home/Member/login/loginname/test/password/123456
+ERR: 无法加载数据库驱动: Think\Db\Driver\
+
