@@ -11,7 +11,7 @@
  Target Server Version : 50538
  File Encoding         : utf-8
 
- Date: 11/24/2015 00:33:56 AM
+ Date: 11/24/2015 21:52:46 PM
 */
 
 SET NAMES utf8;
@@ -124,6 +124,17 @@ CREATE TABLE `kn_moment` (
   `edittime` datetime DEFAULT NULL,
   `createtime` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+--  Table structure for `kn_token`
+-- ----------------------------
+DROP TABLE IF EXISTS `kn_token`;
+CREATE TABLE `kn_token` (
+  `userid` varchar(255) NOT NULL,
+  `token` varchar(255) NOT NULL,
+  `expiredtime` datetime DEFAULT NULL,
+  PRIMARY KEY (`userid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 SET FOREIGN_KEY_CHECKS = 1;
