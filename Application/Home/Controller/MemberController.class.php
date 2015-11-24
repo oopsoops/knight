@@ -1,6 +1,9 @@
 <?php
 namespace Home\Controller;
 use Think\Controller;
+//从Public/Lib目录导入TopSdk.php文件
+import("openIM.TopSdk",'./Public/Lib/','.php');
+
 class MemberController extends Controller {
 	//空方法（所有未知方法的请求都转到此函数）
     public function _empty(){
@@ -34,5 +37,36 @@ class MemberController extends Controller {
     	$this->memberinfo = $rs[0];
     	$this->display();
     }
+
+    //openIM测试
+    public function testSDK() {
+        $rs = $this->getAccountSDK('test');
+        //$arr = (array)$rs;
+        dump($rs->userinfos->userinfos);
+    }
+
+    private function getAccountSDK($user) {
+        $c = new \TopClient;        //thinkphp导入的第三方类，需要在前面加\
+        $c->appkey = C('APPKEY');   //从thinkphp配置文件取值
+        $c->secretKey = C('SECRET');    //从thinkphp配置文件取值
+        $req = new \OpenimUsersGetRequest;  //thinkphp导入的第三方类，需要在前面加\
+        $req->setUserids($user);
+        $resp = $c->execute($req);
+        return $resp;
+    }
+
+    private function addAccountSDK($user,$pass) {
+        $c = new \TopClient;        //thinkphp导入的第三方类，需要在前面加\
+        $c->appkey = C('APPKEY');   //从thinkphp配置文件取值
+        $c->secretKey = C('SECRET');    //从thinkphp配置文件取值
+        $req = new \OpenimUsersAddRequest;
+        $userinfos = new \Userinfos;    //thinkphp导入的第三方类，需要在前面加\
+        $userinfos->userid=$user;
+        $userinfos->password=$pass;
+        $req->setUserinfos(json_encode($userinfos));
+        $resp = $c->execute($req);
+        return $resp;
+    }
+
 
 }
